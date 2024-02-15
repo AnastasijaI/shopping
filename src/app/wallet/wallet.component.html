@@ -1,0 +1,29 @@
+<ul>
+    <li *ngFor="let wallet of wallets">
+        <a routerLink="/wallet/{{wallet.id}}">
+            <img src="{{wallet.imageUrl}}" alt="">
+            <div class="content">
+                <div class="ime">
+                    <strong><em>{{wallet.name}}</em></strong>
+                </div>
+                <span class="favorite {{wallet.favorite?'':'not'}}">
+                    ❤
+                </span>
+            </div>
+
+            <div class="produkti">
+                <div class="origins">
+                    <span *ngFor="let origin of wallet.origins">
+                        {{origin}}
+                    </span>
+                </div>
+                <div class="boja">
+                    <span>color: {{wallet.color}}</span>
+                </div>
+            </div>
+            <div class="cena">
+                    <span>💲{{wallet.price}}</span>
+                </div>
+        </a>
+    </li>
+</ul> 

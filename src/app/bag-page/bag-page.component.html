@@ -1,0 +1,29 @@
+
+<div class="sodr">
+    <img [src]="bag.imageUrl" [alt]="bag.name" >
+    <div class="detali">
+        <div class="heder">
+            <span class="ime">
+                {{bag.name}}
+            </span>
+            <span class="favorite {{bag.favorite?'':'not'}}">
+                ❤
+            </span>
+        </div>
+        <div class="origins">
+            <span *ngFor="let origin of bag.origins">
+                {{origin}}
+            </span>
+        </div>
+        <div class="boja">
+            <span>color: {{bag.color}}</span>
+        </div>
+        <div class="cena">
+            <span>💲{{bag.price}}</span>
+        </div>
+        <button (click)="addToCart()">Add To Cart</button>
+    </div>
+</div>
+
+
+  

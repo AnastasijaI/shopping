@@ -1,0 +1,25 @@
+<div class="sodr">
+    <img [src]="wallet.imageUrl" [alt]="wallet.name" >
+    <div class="detali">
+        <div class="heder">
+            <span class="ime">
+                {{wallet.name}}
+            </span>
+            <span class="favorite {{wallet.favorite?'':'not'}}">
+                ❤
+            </span>
+        </div>
+        <div class="origins">
+            <span *ngFor="let origin of wallet.origins">
+                {{origin}}
+            </span>
+        </div>
+        <div class="boja">
+            <span>color: {{wallet.color}}</span>
+        </div>
+        <div class="cena">
+            <span>💲{{wallet.price}}</span>
+        </div>
+        <button (click)="addToCart()">Add To Cart</button>
+    </div>
+</div>

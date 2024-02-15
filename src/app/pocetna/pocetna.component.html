@@ -1,0 +1,99 @@
+<div [ngStyle]="{
+    'background-image': 'url(https://images4.alphacoders.com/265/thumb-1920-265996.jpg)',
+    'background-size': 'contain',
+    'background-repeat': 'repeat',
+    'background-position': 'center center',
+    'color': 'white',
+    'padding': '20px'
+  }">
+    <div [ngStyle]="{'background-color': 'black','color':'white'}" >
+        <p>Discover Your Style with Our Trendy Bags Collection! 
+            Elevate Your Fashion Game with Chic Totes, Sleek Backpacks, and Stylish Clutches. Unleash Your Personalized Statement – Shop Now for the Perfect Bag to Carry Your Dreams!</p>
+    </div>
+   <app-tags></app-tags>
+    <p>ELEGANT BAGS</p>
+    <ul>
+        <li *ngFor="let bag of bags">
+            <a routerLink="/bag/{{bag.id}}">
+                <img src="{{bag.imageUrl}}" alt="">
+                <div class="content">
+                    <div class="ime">
+                        <strong><em>{{bag.name}}</em></strong>
+                    </div>
+                    <span class="favorite {{bag.favorite?'':'not'}}">
+                        ❤
+                    </span>
+                </div>
+
+                <div class="produkti">
+                    <div class="origins">
+                        <span *ngFor="let origin of bag.origins">
+                            {{origin}}
+                        </span>
+                    </div>
+                    <div class="boja">
+                        <span>color: {{bag.color}}</span>
+                    </div>
+                </div>
+                <div class="cena">
+                        <span>💲{{bag.price}}</span>
+                    </div>
+            </a>
+        </li>
+    </ul> 
+    <p>ELEGANT WALLETS</p>
+    <app-wallet></app-wallet>
+    <!-- <ul>
+        <li *ngFor="let wallet of wallets">
+            <a routerLink="/wallet/{{wallet.id}}">
+                <img src="{{wallet.imageUrl}}" alt="">
+                <div class="content">
+                    <div class="ime">
+                        <strong><em>{{wallet.name}}</em></strong>
+                    </div>
+                    <span class="favorite {{wallet.favorite?'':'not'}}">
+                        ❤
+                    </span>
+                </div>
+
+                <div class="produkti">
+                    <div class="origins">
+                        <span *ngFor="let origin of wallet.origins">
+                            {{origin}}
+                        </span>
+                    </div>
+                    <div class="boja">
+                        <span>color: {{wallet.color}}</span>
+                    </div>
+                </div>
+                <div class="cena">
+                        <span>💲{{wallet.price}}</span>
+                    </div>
+            </a>
+        </li>
+    </ul>  -->
+    <div class="poveke" [ngStyle]="{'background-color': 'black','color':'white'}">
+        <h1>Contact and information</h1> 
+        <h3>Customer Support:</h3>
+        <ul [ngStyle]="{'list-style-type': 'none', 
+            'padding': '0',
+            'margin': '0', 
+            'display': 'flex', 
+            'flex-direction': 'column', 
+            'align-items': 'center'}">
+               <li><strong>Email:</strong> support&#64;bagswift.com</li>
+                <li><strong>Phone:</strong> +1 (555) 123-4567</li>
+                <li><strong>Hours:</strong> Monday to Sunday, 9:00 AM - 6:00 PM</li>
+                <li><strong>Live Chat:</strong> Available on our website during business hours.</li>
+        </ul>
+        <h3>About Us:</h3>
+        <p>Welcome to Bags Swift, your go-to destination for stylish and high-quality bags and wallets. We pride ourselves 
+            on offering a curated collection that blends fashion and functionality, ensuring you find the perfect accessory for any occasion.</p>
+            <p>Stay connected with Bags Swift on social media for the latest updates, promotions, and style inspirations. </p>
+                <a href="https://www.facebook.com/" >Facebook:Bags Swift</a> <br> 
+                <a href="https://www.instagram.com/">Instagram: BagsSwift</a> <br>
+                <a href="https://www.twitter.com/">Twitter: BagsSwift</a><br>
+           <p></p>
+    </div>
+
+</div>
